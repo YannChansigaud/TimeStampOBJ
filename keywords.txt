@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 ###########################################
 
-TimeStampOBJ   KEYWORD1
+TimeStampOBJ    KEYWORD1
 
 ###########################################
 # Methods and Functions (KEYWORD2)
