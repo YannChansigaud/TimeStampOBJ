@@ -35,14 +35,14 @@ This class use 2 TimeOBJ objects
 //#define TimeStampOBJ_defaultFormat   MICRO
 #define TimeStampOBJ_defaultFormat   MILLI
 
-class TimeStampOBJ{
-  public :
-    TimeStampOBJ();
-	// ==================================================== //       Values get back methods
-	TimeOBJ &getTimeFromLastCheck();                        // since last call
-	TimeOBJ &getTimeFromBeginning();                        // since the begenning
-	// ==================================================== //       Overloaded comparison operator with values
-	bool operator>=( uint32_t val );                        // >=
+class TimeStampOBJ{                                         // 
+  public :                                                  // 
+    TimeStampOBJ();                                         // 
+    // ==================================================== //       Values get back methods
+    TimeOBJ &getTimeFromLastCheck();                        // since last call
+    TimeOBJ &getTimeFromBeginning();                        // since the begenning
+    // ==================================================== //       Overloaded comparison operator with values
+    bool operator>=( uint32_t val );                        // >=
     bool operator<=( uint32_t val );                        // <=
     bool operator>(  uint32_t val );                        // >
     bool operator<(  uint32_t val );                        // <
@@ -54,17 +54,16 @@ class TimeStampOBJ{
     // ==================================================== //       
     uint8_t getNbLoop();                                    // Accessor to nbLoop of micros() counted
     void compute();                                         // Method called at least 1 time per hour
-
-	
-
-  private :
-    TimeOBJ now     = TimeOBJ();
-    TimeOBJ past    = TimeOBJ();
-    uint32_t TPREV  = 0;
-	uint32_t TNOW   = 0;
-	uint32_t TPASS  = 0;
-	uint8_t  nbLoop = 0;
-	bool has_loop = false;
-};
+    TimeOBJ &get();                                         // 
+    // ==================================================== // 
+  private :                                                 // 
+    TimeOBJ now     = TimeOBJ();                            // 
+    TimeOBJ past    = TimeOBJ();                            // 
+    uint32_t TPREV  = 0;                                    // 
+    uint32_t TNOW   = 0;                                    // 
+    uint32_t TPASS  = 0;                                    // 
+    uint8_t  nbLoop = 0;                                    // 
+    bool has_loop   = false;                                // 
+};                                                          // 
 
 #endif
