@@ -1,0 +1,24 @@
+ TimeStampOBJ.h
+ CREATED on WEDNESDAY 17 APRIL 2019
+ by CHANSIGAUD YANN
+
+TimeStampOBJ available on https://github.com/YannChansigaud/TimeStampOBJ
+TimeStampOBJ use TimeOBJ available on : https://github.com/YannChansigaud/TimeOBJ
+
+TimeStampOBJ is designed to define a time mark. All internal calculation are using microsecond with micros()
+
+WARNING : all values sended to TimeStampOBJ with overloaded comparison operator ( >, <, >=, <= ) are evaluated as millisecond in view to correspond to millis()
+          define TimeStampOBJ_defaultFormat to "MICRO" if you want to pass microseconds values
+
+PAY ATTENTION : this class has to be called with compute() at least 1 time per hours
+                maximum delay between two calls : 1h 11min 34s 967ms 295us (H/M/S/ms/us equivalent for the maximum of uint32_t length return by micros() )
+
+- This class didn't reset micros().
+- micros() rollback to zero by itself when uint32_t maximum reached
+
+This class use 2 TimeOBJ objects
+- TimeOBJ now : Time object to store total execution time since the begining 
+- TimeOBJ pass : Time object to store elapsed time since last call
+                 This object is use to store temporary values used by comparison operator
+
+- TNOW, TPREV, TPASS : uint32_t variables used for calculation with micros()
