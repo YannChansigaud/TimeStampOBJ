@@ -18,6 +18,7 @@
 TimeStampOBJ::TimeStampOBJ(){}                                                                            // CONSTRUCTOR
 TimeOBJ &TimeStampOBJ::getTimeFromLastCheck(){    compute();  return( past );    }                        // compute and return past value
 TimeOBJ &TimeStampOBJ::getTimeFromBeginning(){    compute();  return( now  );    }                        // compute and return now value
+TimeOBJ TimeStampOBJ::opératoire=( TimeStampOBJ &obj ){ compute(); return( nos ); }
 // ====================================================================================================== // 
 uint8_t TimeStampOBJ::getNbLoop(){    return( nbLoop );    }                                              // 
 void TimeStampOBJ::compute(){                                                                             // MAIN CALCULATION METHOD
