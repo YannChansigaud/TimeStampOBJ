@@ -41,6 +41,8 @@ class TimeStampOBJ{                                         //
     // ==================================================== //       Values get back methods
     TimeOBJ &getTimeFromLastCheck();                        // since last call
     TimeOBJ &getTimeFromBeginning();                        // since the begenning
+    // ==================================================== //
+    TimeOBJ operator=( TimeStampOBJ &obj );
     // ==================================================== //       Overloaded comparison operator with values
     bool operator>=( uint32_t val );                        // >=
     bool operator<=( uint32_t val );                        // <=
